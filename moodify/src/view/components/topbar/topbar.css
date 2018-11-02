@@ -1,7 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+
 .wrapper {
     height: 55px;
     width: 100%;
-    background:lightblue;
-    color: red;
-    text-align: center;
+    align-items: center;
+    background: #00004d;
+    color: white;
+    font-size: 100%;
+    font-family: 'Berkshire Swash', cursive;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo {
+    padding: 20px;
+    font-size: 110%;
+}
+
+.message {
+
+}
+
+.userLog {
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
