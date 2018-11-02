@@ -4,7 +4,7 @@ import './moodSelector.css';
 class MoodSelector extends Component {
     render() {
       return (
-        <div className="wrapper">
+        <div className="selectorWrapper">
             <div>MoodSelector</div>
         </div>
       );
