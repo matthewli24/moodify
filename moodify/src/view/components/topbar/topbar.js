@@ -4,16 +4,16 @@ import './topbar.css';
 class Topbar extends Component {
     render() {
       return (
-        <div className="wrapper">
-            <div className="logo">
+        <div className="topbarWrapper">
+            <div className="topbarLogo">
               <a>Moodify</a>
             </div>
 
-            <div className="message">
-              <a>How Are You Feeling Beautiful?</a>
+            <div className="topbarMessage">
+              <a>How Are You Feeling?</a>
             </div>
 
-            <div className="userLog">
+            <div className="topbarUserLog">
               <a>Log In</a>
               <a>Sign Up</a>
             </div>

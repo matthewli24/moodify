@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
 
-.wrapper {
+.topbarWrapper {
     height: 55px;
     width: 100%;
     align-items: center;
-    background: #00004d;
+    background: #003366;
     color: white;
     font-size: 100%;
     font-family: 'Berkshire Swash', cursive;
@@ -13,16 +13,16 @@
     justify-content: space-between;
 }
 
-.logo {
+.topbarLogo {
     padding: 20px;
     font-size: 110%;
 }
 
-.message {
+.topbarMessage {
 
 }
 
-.userLog {
+.topbarUserLog {
     width: 150px;
     display: flex;
     flex-direction: row;
