@@ -1,5 +1,53 @@
 .selectorWrapper {
-    height: 100px;
+    height: 500px;
     width: 100%;
-    background: #004d99;
+    align-items: center;
+    background: #002e6b;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.angry {
+    height: 220px;
+    width: 220px;
+    background: url("../../assets/1_.png") no-repeat center;
+    /* border: solid 8px yellow;
+    border-radius: 100%; */
+    margin: 0px 25px;
+}
+
+.sad {
+    height: 220px;
+    width: 220px;
+    background: url("../../assets/2_.png") no-repeat center;
+    margin: 0px 25px;
+}
+
+
+.neutral {
+    height: 220px;
+    width: 220px;
+    background: url("../../assets/3_.png") no-repeat center;
+    margin: 0px 25px;
+}
+
+.happy {
+    height: 220px;
+    width: 220px;
+    background: url("../../assets/4_.png") no-repeat center;
+    margin: 0px 25px;
+}
+
+.beautiful {
+    height: 220px;
+    width: 220px;
+    background: url("../../assets/5_.png") no-repeat center;
+    margin: 0px 25px;
+}
+
+.angry:hover, .sad:hover, .neutral:hover, .happy:hover, .beautiful:hover {
+    border: solid 9px yellow;
+    border-radius: 100%;
 }
