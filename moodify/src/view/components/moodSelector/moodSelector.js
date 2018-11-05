@@ -5,7 +5,11 @@ class MoodSelector extends Component {
     render() {
       return (
         <div className="selectorWrapper">
-            <div>MoodSelector</div>
+            <div className="angry"></div>
+            <div className="sad"></div>
+            <div className="neutral"></div>
+            <div className="happy"></div>
+            <div className="beautiful"></div>
         </div>
       );
     }
