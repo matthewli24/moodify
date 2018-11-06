@@ -10,6 +10,7 @@ class MoodSelector extends Component {
             <div className="neutral"></div>
             <div className="happy"></div>
             <div className="beautiful"></div>
+            <div className="box"></div>
         </div>
       );
     }
