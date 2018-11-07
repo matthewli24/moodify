@@ -5,45 +5,62 @@ class MoodSelector extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mood: "neutral"
+      mood: "",
+      angrySelected: false,
+      sadSelected: false,
+      neutralSelected: false,
+      happySelected: false,
+      beautifulSelected: false
     }
   }
 
   selectAngry = () => {
+    (this.state.angrySelected) ?
     this.setState({
-      mood: "angry"
+      mood: "",
+      angrySelected: false
+    }) :
+    this.setState({
+      mood: "angry",
+      angrySelected: true
     })
+
   };
 
   selectSad = () => {
     this.setState({
-      mood: "sad"
+      mood: "sad",
+      sadSelected: true
     })
   };
 
   selectNeutral = () => {
     this.setState({
-      mood: "neutral"
+      mood: "neutral",
+      neutralSelected: true
     })
   };
 
   selectHappy = () => {
     this.setState({
-      mood: "happy"
+      mood: "happy",
+      happySelected: true
     })
   };
 
   selectBeautiful = () => {
     this.setState({
-      mood: "beautiful"
+      mood: "beautiful",
+      beautifulSelected: true
     })
   };
   
 
   render() {
+    let angryClass= this.state.angrySelected ? "angrySelected" : "angry"
     return (
       <div className="selectorWrapper">
-          <div className="angry" onClick={this.selectAngry}></div>
+          <div className={angryClass} onClick={this.selectAngry}></div>
           <div className="sad" onClick={this.selectSad}></div>
           <div className="neutral" onClick={this.selectNeutral}></div>
           <div className="happy" onClick={this.selectHappy}></div>

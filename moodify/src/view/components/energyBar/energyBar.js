@@ -23,7 +23,7 @@ class EnergyBar extends Component {
   render() {
     return (
       <div className="energyBarWrapper">
-        <div className="lowEnergy">Low</div>
+        <div className="lowEnergy">Low Energy</div>
         <div className="slider">
           <Slider 
             value={this.state.value}
@@ -40,7 +40,7 @@ class EnergyBar extends Component {
             railStyle={{ backgroundColor: 'yellow', height: 25 }}
             />
         </div>
-        <div className="highEnergy">High</div>
+        <div className="highEnergy">High Energy</div>
       </div>
     );
   }

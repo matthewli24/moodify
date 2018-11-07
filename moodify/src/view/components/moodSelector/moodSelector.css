@@ -58,8 +58,6 @@
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-
-
 .beautiful {
     height: 220px;
     width: 220px;
@@ -113,4 +111,17 @@ transform: scale(1.25, 1.25);
 .beautiful:hover::after {
     opacity: 1;
 }
-  
+
+
+.angrySelected {
+    height: 220px;
+    width: 220px;
+    background: url("../../assets/1_.png") no-repeat center;
+    margin: 0px 25px;
+    position: relative;
+    box-shadow: 0px 25px 30px yellow;
+    border-radius: 100%;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: scale(1.25, 1.25);
+}
