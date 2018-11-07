@@ -19,7 +19,7 @@ class MoodSelector extends Component {
     this.setState({
       mood: "",
       angrySelected: false
-    }) :
+    }):
     this.setState({
       mood: "angry",
       angrySelected: true
@@ -28,6 +28,11 @@ class MoodSelector extends Component {
   };
 
   selectSad = () => {
+    (this.state.sadSelected) ?
+    this.setState({
+      mood: "",
+      sadSelected: false
+    }):
     this.setState({
       mood: "sad",
       sadSelected: true
@@ -35,6 +40,11 @@ class MoodSelector extends Component {
   };
 
   selectNeutral = () => {
+    (this.state.neutralSelected) ?
+    this.setState({
+      mood: "",
+      neutralSelected: false
+    }):
     this.setState({
       mood: "neutral",
       neutralSelected: true
@@ -42,6 +52,11 @@ class MoodSelector extends Component {
   };
 
   selectHappy = () => {
+    (this.state.happySelected) ?
+    this.setState({
+      mood: "",
+      happySelected: false
+    }):
     this.setState({
       mood: "happy",
       happySelected: true
@@ -49,6 +64,11 @@ class MoodSelector extends Component {
   };
 
   selectBeautiful = () => {
+    (this.state.beautifulSelected) ?
+    this.setState({
+      mood: "",
+      beautifulSelected: false
+    }):
     this.setState({
       mood: "beautiful",
       beautifulSelected: true
@@ -58,13 +78,17 @@ class MoodSelector extends Component {
 
   render() {
     let angryClass= this.state.angrySelected ? "angrySelected" : "angry"
+    let sadClass= this.state.sadSelected ? "sadSelected" : "sad"
+    let neutralClass= this.state.neutralSelected ? "neutralSelected" : "neutral"
+    let happyClass= this.state.happySelected ? "happySelected" : "happy"
+    let beautifulClass= this.state.beautifulSelected ? "beautifulSelected" : "beautiful"
     return (
       <div className="selectorWrapper">
           <div className={angryClass} onClick={this.selectAngry}></div>
-          <div className="sad" onClick={this.selectSad}></div>
-          <div className="neutral" onClick={this.selectNeutral}></div>
-          <div className="happy" onClick={this.selectHappy}></div>
-          <div className="beautiful" onClick={this.selectBeautiful}></div>
+          <div className={sadClass} onClick={this.selectSad}></div>
+          <div className={neutralClass} onClick={this.selectNeutral}></div>
+          <div className={happyClass} onClick={this.selectHappy}></div>
+          <div className={beautifulClass} onClick={this.selectBeautiful}></div>
       </div>
     );
   }
