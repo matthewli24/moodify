@@ -70,12 +70,6 @@
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* .angry:hover, .sad:hover, .neutral:hover, .happy:hover, .beautiful:hover {
-    
-    box-shadow: 0px 15px 15px yellow;
-    border-radius: 100%;
-} */
-
 .angry::after,
 .sad::after,
 .neutral::after,
@@ -119,7 +113,59 @@ transform: scale(1.25, 1.25);
     background: url("../../assets/1_.png") no-repeat center;
     margin: 0px 25px;
     position: relative;
-    box-shadow: 0px 25px 30px yellow;
+    box-shadow: 0px 25px 30px rgb(255, 2, 2);
+    border-radius: 100%;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: scale(1.25, 1.25);
+}
+
+.sadSelected {
+    height: 220px;
+    width: 220px;
+    background: url("../../assets/2_.png") no-repeat center;
+    margin: 0px 25px;
+    position: relative;
+    box-shadow: 0 25px 30px rgb(255, 157, 0);
+    border-radius: 100%;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: scale(1.25, 1.25);
+}
+
+.neutralSelected {
+    height: 220px;
+    width: 220px;
+    background: url("../../assets/3_.png") no-repeat center;
+    margin: 0px 25px;
+    position: relative;
+    box-shadow: 0 25px 30px yellow;
+    border-radius: 100%;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: scale(1.25, 1.25);
+}
+
+.happySelected {
+    height: 220px;
+    width: 220px;
+    background: url("../../assets/4_.png") no-repeat center;
+    margin: 0px 25px;
+    position: relative;
+    box-shadow: 0 25px 30px rgb(166, 255, 0);
+    border-radius: 100%;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: scale(1.25, 1.25);
+}
+
+.beautifulSelected {
+    height: 220px;
+    width: 220px;
+    background: url("../../assets/5_.png") no-repeat center;
+    margin: 0px 25px;
+    position: relative;
+    box-shadow: 0 25px 30px rgb(0, 255, 0);
     border-radius: 100%;
     -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
