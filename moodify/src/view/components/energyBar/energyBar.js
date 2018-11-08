@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Slider, { Range } from 'rc-slider';
-import Background from '../../assets/1_.png'
 import 'rc-slider/assets/index.css';
 import './energyBar.css';
+import SubmitBtn from '../submitBtn/submitBtn';
 
 
 class EnergyBar extends Component {
@@ -14,7 +14,7 @@ class EnergyBar extends Component {
   }
   
   handleOnChange = (val) => {
-    console.log(val)
+    // console.log(val)
     this.setState({
       value: val
     })
@@ -22,25 +22,31 @@ class EnergyBar extends Component {
   
   render() {
     return (
-      <div className="energyBarWrapper">
-        <div className="lowEnergy">Low Energy</div>
-        <div className="slider">
-          <Slider 
-            value={this.state.value}
-            onChange={this.handleOnChange}
-            handleStyle={{
-              borderColor: 'black',
-              height: 50,
-              width: 50,
-              marginLeft: -14,
-              marginTop: -12,
-              backgroundColor: 'yellow',
-            }}
-            trackStyle={{ backgroundColor: 'red', height: 25 }}
-            railStyle={{ backgroundColor: 'black', height: 25 }}
-            />
+      <div className="energyAndBtnWrapper">
+        <div className="energyBarWrapper">
+          <div className="lowEnergy">Low Energy</div>
+          <div className="slider">
+            <Slider 
+              value={this.state.value}
+              onChange={this.handleOnChange}
+              handleStyle={{
+                borderColor: 'black',
+                height: 50,
+                width: 50,
+                marginLeft: -14,
+                marginTop: -12,
+                backgroundColor: 'yellow',
+              }}
+              trackStyle={{ backgroundColor: 'red', height: 25 }}
+              railStyle={{ backgroundColor: 'black', height: 25 }}
+              />
+          </div>
+          <div className="highEnergy">High Energy</div>
         </div>
-        <div className="highEnergy">High Energy</div>
+        <SubmitBtn
+          mood={this.props.mood}
+          energy={this.state.value}
+        />
       </div>
     );
   }
