@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './moodSelector.css';
+import EnergyBar from '../energyBar/energyBar';
 
 class MoodSelector extends Component {
   constructor(props) {
@@ -27,13 +28,17 @@ class MoodSelector extends Component {
     let happyClass= this.state.selected[3] ? "happySelected" : "happy"
     let beautifulClass= this.state.selected[4] ? "beautifulSelected" : "beautiful"
     return (
-      <div className="selectorWrapper">
-          <div className={angryClass} onClick={() => this.handleOnClick(0)}></div>
-          <div className={sadClass} onClick={() => this.handleOnClick(1)}></div>
-          <div className={neutralClass} onClick={() => this.handleOnClick(2)}></div>
-          <div className={happyClass} onClick={() => this.handleOnClick(3)}></div>
-          <div className={beautifulClass} onClick={() => this.handleOnClick(4)}></div>
+      <div className="moodAndEnergyWrapper">
+        <div className="selectorWrapper">
+            <div className={angryClass} onClick={() => this.handleOnClick(0)}></div>
+            <div className={sadClass} onClick={() => this.handleOnClick(1)}></div>
+            <div className={neutralClass} onClick={() => this.handleOnClick(2)}></div>
+            <div className={happyClass} onClick={() => this.handleOnClick(3)}></div>
+            <div className={beautifulClass} onClick={() => this.handleOnClick(4)}></div>
+        </div>
+        <EnergyBar mood={this.state.mood}/>
       </div>
+      
     );
   }
 }
