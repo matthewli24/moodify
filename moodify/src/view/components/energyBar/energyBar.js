@@ -34,10 +34,10 @@ class EnergyBar extends Component {
               width: 50,
               marginLeft: -14,
               marginTop: -12,
-              backgroundColor: 'red',
+              backgroundColor: 'yellow',
             }}
-            trackStyle={{ backgroundColor: 'green', height: 25 }}
-            railStyle={{ backgroundColor: 'yellow', height: 25 }}
+            trackStyle={{ backgroundColor: 'red', height: 25 }}
+            railStyle={{ backgroundColor: 'black', height: 25 }}
             />
         </div>
         <div className="highEnergy">High Energy</div>
