@@ -1,7 +1,32 @@
-.wrapper {
-    height: 55px;
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+
+.topbarWrapper {
+    height: 70px;
     width: 100%;
-    background:lightblue;
-    color: red;
-    text-align: center;
+    align-items: center;
+    background: #027bf3;
+    color: white;
+    font-size: 40px;
+    font-family: 'Berkshire Swash', cursive;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1;
+}
+
+.topbarLogo {
+    padding: 20px;
+    font-size: 110%;
+}
+
+.topbarMessage {
+
+}
+
+.topbarUserLog {
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }

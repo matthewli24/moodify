@@ -1,0 +1,11 @@
+.playButtonWrapper {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    background: #002e6b;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 25px;
+}
