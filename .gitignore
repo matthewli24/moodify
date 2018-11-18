@@ -1,4 +1,4 @@
 config.json
-keys.json
+keys.js
 .DS_Store
 backend/node_modules
