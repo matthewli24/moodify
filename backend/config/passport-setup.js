@@ -3,11 +3,11 @@ const SpotifyStrategy = require('passport-spotify').Strategy;
 const keys = require('./keys');
 const User = require('../models').User;
 
-passport.serializeUser(function (user, done) {
+passport.serializeUser((user, done) => {
     done(null, user.id);
 });
 
-passport.deserializeUser(function (id, done) {
+passport.deserializeUser((id, done) => {
     User.findById(id).then((user) => {
         done(null, user);
     });
@@ -24,7 +24,7 @@ passport.use(
             const id = profile.id;
             User.findOne({
                 where: { spotifyId: id },
-            }).then( (user) => {
+            }).then((user) => {
                 if (user) {
                     console.log('user already exists');
                     return done(null, user);

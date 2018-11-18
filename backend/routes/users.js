@@ -9,4 +9,18 @@ router.get('/:userid', (req, res, next) => {
   });
 });
 
+router.get('/', (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  const user = req.user;
+  if (user) {
+    res.json({
+      id: user.spotifyId,
+      email: user.email
+    });
+  }
+  else {
+    res.json({ error: 'no user' });
+  }
+});
+
 module.exports = router;

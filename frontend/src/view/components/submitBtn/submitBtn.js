@@ -9,11 +9,18 @@ class SubmitBtn extends Component {
   }
 
   handleOnClick = () => {
-    console.log(this.props.mood, this.props.energy)  
+    let mood = this.props.mood;
+    let energy = this.props.energy / 100;
+    console.log(mood, energy)
+    if (mood) {
+      // do something
+    } else {
+      alert('PLEASE SELECT A MOOD!');
+    }
   }
 
   render() {
-    return(
+    return (
       <div className="submitBtnWrapper">
         <button className="submitBtn" onClick={this.handleOnClick}>
           Moodify!
