@@ -3,13 +3,14 @@ const SpotifyStrategy = require('passport-spotify').Strategy;
 const keys = require('./keys');
 const User = require('../models').User;
 
-//TODO: will be changed later
 passport.serializeUser(function (user, done) {
-    done(null, user);
+    done(null, user.id);
 });
 
-passport.deserializeUser(function (obj, done) {
-    done(null, obj);
+passport.deserializeUser(function (id, done) {
+    User.findById(id).then((user) => {
+        done(null, user);
+    });
 });
 
 passport.use(
@@ -26,7 +27,7 @@ passport.use(
             }).then( (user) => {
                 if (user) {
                     console.log('user already exists');
-                    return done(null, profile);
+                    return done(null, user);
                 }
                 else {
                     const email = profile.emails[0].value;
@@ -37,7 +38,7 @@ passport.use(
                     }).save()
                     .then((newUser) => {
                         console.log(`new user created: ${newUser}`);
-                        return done(null, profile);
+                        return done(null, newUser);
                     });
                 }
             })

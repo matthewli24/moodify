@@ -18,6 +18,9 @@ module.exports = (sequelize, DataTypes) => {
                 isEmail: true,
             },
         },
+        // admin: {
+        //     type: DataTypes. (TODO: For Later)
+        // }
     });
 
     return User;
