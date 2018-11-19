@@ -6,12 +6,36 @@ import './App.css';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: "",
+      email: "",
+    }
+  }
+
+  componentDidMount() {
+    fetch('/users')
+      .then(res => res.json())
+      .then(res => {this.setState({
+        username: res.id,
+        email: res.email
+      })})
+      .catch((err) => {
+        console.log(err)
+      })
+    
+  }
+
   render() {
     return (
       <div className='container'>
-        <Topbar/>
-        <MoodSelector/>
-        <PlayButton/>
+        <Topbar
+          username = {this.state.username}
+          email = {this.state.email}
+        />
+        <MoodSelector />
+        <PlayButton />
       </div>
     );
   }
