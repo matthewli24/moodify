@@ -11,16 +11,7 @@ router.get('/spotify', passport.authenticate('spotify', {
 
 router.get('/spotify/redirect', passport.authenticate('spotify', { failureRedirect: '/spotify' }),
     (req, res, next) => {
-        const user = req.user;
-        if (req.isAuthenticated() && user){
-            res.json({
-                id: user.spotifyId,
-                email: user.email
-            });
-        }
-        else {
-            res.json({error: 'no user'});
-        }
+        res.redirect('http://localhost:3000');
 });
 
 router.get('/logout', (req, res) => {
