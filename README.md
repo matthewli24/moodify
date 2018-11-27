@@ -19,8 +19,10 @@ Setup keys, client id/secret, and passwords:
 * In `config.json`, under `development`, put in your Postgres database credentials, leaving `host` and `dialect` the same.
 * In `keys.js`, put in your client ID and client secret that you got from Spotify Developer.
 
-**Start Backend Server**
+**Start Servers**
 * `cd backend`
 * `npm start`: currently runs `nodemon` and will restart the server when changes are detected. In production, this will be changed.
 * Runs on `localhost:8000`
 * There's a simple tester site that lets you login at `localhost:8000` so that you can test endpoints from a browser.
+* `cd frontend`
+* `npm start`
