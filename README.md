@@ -26,3 +26,4 @@ Setup keys, client id/secret, and passwords:
 * There's a simple tester site that lets you login at `localhost:8000` so that you can test endpoints from a browser.
 * `cd frontend`
 * `npm start`
+* Runs on `localhost:3000`
