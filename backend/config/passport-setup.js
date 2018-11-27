@@ -3,12 +3,17 @@ const SpotifyStrategy = require('passport-spotify').Strategy;
 const keys = require('./keys');
 const User = require('../models').User;
 
-passport.serializeUser((user, done) => {
-    done(null, user.id);
+passport.serializeUser((userSession, done) => {
+    const session = {
+        id: userSession.user.id, 
+        tokens: userSession.tokens
+    } 
+    //token info is extracted by 'redirect' endpoint
+    done(null, session);
 });
 
 passport.deserializeUser((id, done) => {
-    User.findById(id).then((user) => {
+    User.findByPk(id).then((user) => {
         done(null, user);
     });
 });
@@ -25,9 +30,17 @@ passport.use(
             User.findOne({
                 where: { spotifyId: id },
             }).then((user) => {
+                const tokens = {
+                    access: accessToken,
+                    refresh: refreshToken,
+                    expires: expires_in
+                };
                 if (user) {
                     console.log('user already exists');
-                    return done(null, user);
+                    return done(null, {
+                        user: user, 
+                        tokens: tokens
+                    });
                 }
                 else {
                     const email = profile.emails[0].value;
@@ -38,7 +51,10 @@ passport.use(
                     }).save()
                     .then((newUser) => {
                         console.log(`new user created: ${newUser}`);
-                        return done(null, newUser);
+                        return done(null, {
+                            user: newUser,
+                            tokens: tokens
+                        });
                     });
                 }
             })

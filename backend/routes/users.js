@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models').User;
 
+//TODO: Protect Access to These Endpoints
+
 router.get('/:userid', (req, res, next) => {
   const userid = req.params.userid;
   User.findByPk(userid).then((user) => {

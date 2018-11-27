@@ -12,6 +12,9 @@ const helmet = require('helmet');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth-routes');
+const spotifyRouter = require('./routes/spotify-routes');
+
+//passport config
 const passportSetup = require('./config/passport-setup');
 
 //dev
@@ -48,6 +51,7 @@ app.use(passport.session());
 app.use('/users', usersRouter);
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
+app.use('/spotify', spotifyRouter);
 
 //cors bypass
 const FRONTENDURL = 'http://localhost:3000';
