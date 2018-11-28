@@ -12,7 +12,7 @@ class SubmitBtn extends Component {
     let mood = this.props.mood;
     let energy = this.props.energy / 100;
     console.log(mood, energy)
-    if (mood) {
+    if (mood != null) {
       // do something
     } else {
       alert('PLEASE SELECT A MOOD!');
