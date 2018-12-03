@@ -5,7 +5,7 @@ const request = require('request');
 
 //get access token
 router.get('/spotify', passport.authenticate('spotify', {
-    scope: ['user-read-email', 'user-read-private', 'user-top-read', 'user-read-recently-played', 'playlist-modify-private', 'user-library-read', 'playlist-modify-public'],
+    scope: ['user-read-email', 'user-read-private', 'user-top-read', 'user-read-recently-played', 'playlist-modify-private', 'user-library-read', 'playlist-modify-public', 'user-follow-read'],
     showDialog: true
 })
 );
