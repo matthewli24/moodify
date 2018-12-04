@@ -10,6 +10,8 @@ class App extends Component {
     this.state = {
       username: "",
       email: "",
+      moodSelected: false,
+      playlistURL: ""
     }
   }
 
@@ -27,14 +29,23 @@ class App extends Component {
       })
   }
 
+  onMoodSelect = (selected, url) => {
+    this.setState({
+      moodSelected: selected,
+      playlistURL: url
+    })
+  }
+
   render() {
+    let moodSelection = this.state.moodSelected ? "" : <MoodSelector onMoodSelect={this.onMoodSelect} />
     return (
       <div className='container'>
         <Topbar
           username={this.state.username}
           email={this.state.email}
         />
-        <MoodSelector />
+        {moodSelection}
+        <PlayButton playlistURL={this.state.playlistURL} />
       </div>
     );
   }

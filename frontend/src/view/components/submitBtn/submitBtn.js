@@ -13,6 +13,7 @@ class SubmitBtn extends Component {
   handleOnClick = () => {
     let mood = this.props.mood;
     let energy = this.props.energy / 100;
+
     console.log(mood, energy)
     if (mood != null) {
       fetch(`/playlist?mood=${mood}&energy=${energy}`)
@@ -22,9 +23,10 @@ class SubmitBtn extends Component {
             playlistURL: res.playlistURL
           })
         })
-        .then( ()=> {console.log(this.state.playlistURL)})
+        .then(() => { console.log(this.state.playlistURL) })
+        .then(() => { this.props.onMoodSelect(true, this.state.playlistURL) })
         .catch((err) => {
-          console.log("error found: ", err)
+          console.log("error fetching playlist: ", err)
         })
     } else {
       alert('PLEASE SELECT A MOOD!');
@@ -33,13 +35,10 @@ class SubmitBtn extends Component {
 
   render() {
     return (
-      <div>
-        <div className="submitBtnWrapper">
-          <button className="submitBtn" onClick={this.handleOnClick}>
-            Moodify!
+      <div className="submitBtnWrapper">
+        <button className="submitBtn" onClick={this.handleOnClick}>
+          Moodify!
         </button>
-        </div>
-        <PlayButton playlistURL={this.state.playlistURL} />
       </div>
     );
   }
