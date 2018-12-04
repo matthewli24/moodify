@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './submitBtn.css'
+import PlayButton from '../playButton/playButton';
 
 class SubmitBtn extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      playlistURL: ""
     }
   }
 
@@ -13,7 +15,17 @@ class SubmitBtn extends Component {
     let energy = this.props.energy / 100;
     console.log(mood, energy)
     if (mood != null) {
-      // do something
+      fetch(`/playlist?mood=${mood}&energy=${energy}`)
+        .then(res => res.json())
+        .then(res => {
+          this.setState({
+            playlistURL: res.playlistURL
+          })
+        })
+        .then( ()=> {console.log(this.state.playlistURL)})
+        .catch((err) => {
+          console.log("error found: ", err)
+        })
     } else {
       alert('PLEASE SELECT A MOOD!');
     }
@@ -21,10 +33,13 @@ class SubmitBtn extends Component {
 
   render() {
     return (
-      <div className="submitBtnWrapper">
-        <button className="submitBtn" onClick={this.handleOnClick}>
-          Moodify!
+      <div>
+        <div className="submitBtnWrapper">
+          <button className="submitBtn" onClick={this.handleOnClick}>
+            Moodify!
         </button>
+        </div>
+        <PlayButton playlistURL={this.state.playlistURL} />
       </div>
     );
   }
