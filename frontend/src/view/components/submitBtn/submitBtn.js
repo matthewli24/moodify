@@ -24,7 +24,7 @@ class SubmitBtn extends Component {
           })
         })
         .then(() => { console.log(this.state.playlistURL) })
-        .then(() => { this.props.onMoodSelect(true, this.state.playlistURL) })
+        .then(() => { this.props.onMoodSelect(true, mood, this.state.playlistURL) })
         .catch((err) => {
           console.log("error fetching playlist: ", err)
         })

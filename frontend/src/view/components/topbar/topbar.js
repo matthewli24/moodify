@@ -23,7 +23,7 @@ class Topbar extends Component {
     if(username) {
       button = 
         <div className="signedIn">
-          <div className="username">{username}</div>
+          {/* <div className="username">{username}</div> */}
           <button className="signOutBtn" onClick={this.handleSigOut}>Sign Out</button>
         </div>
     } else {

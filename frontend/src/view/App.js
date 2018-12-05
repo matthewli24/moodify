@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Topbar from './components/topbar/topbar';
 import MoodSelector from './components/moodSelector/moodSelector';
 import PlayButton from './components/playButton/playButton';
+import ChangeMoodSelector from './components/changeMoodSelector/changeMoodSelector';
 import './App.css';
 
 class App extends Component {
@@ -11,7 +12,8 @@ class App extends Component {
       username: "",
       email: "",
       moodSelected: false,
-      playlistURL: ""
+      playlistURL: "",
+      mood: null
     }
   }
 
@@ -29,15 +31,23 @@ class App extends Component {
       })
   }
 
-  onMoodSelect = (selected, url) => {
+  onMoodSelect = (selected, currentMood, url) => {
     this.setState({
       moodSelected: selected,
-      playlistURL: url
+      playlistURL: url,
+      mood: currentMood
+    })
+  }
+
+  onMoodChange = (selected) => {
+    this.setState({
+      moodSelected: selected
     })
   }
 
   render() {
-    let moodSelection = this.state.moodSelected ? "" : <MoodSelector onMoodSelect={this.onMoodSelect} />
+    let moodSelection = this.state.moodSelected ? <ChangeMoodSelector mood={this.state.mood} onMoodChange={this.onMoodChange}/> :
+                                                  <MoodSelector onMoodSelect={this.onMoodSelect} />
     return (
       <div className='container'>
         <Topbar
