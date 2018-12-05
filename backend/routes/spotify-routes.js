@@ -63,7 +63,6 @@ router.get('/createplaylist', (req, res) => {
         json: playlistDetails
     };
 
-   
     request.post(options, (error, response, body) => {
         //set the playlistId to the recently created playlist id
         createdPlaylistId = body.id;
@@ -278,22 +277,7 @@ router.get('/artiststoptracks', (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//------------------- Refresh Code --------------------------
 function refresh(refresh_token, callback) {
     //use the token received in the `callback` function
     const client_id = keys.spotify.clientID;
