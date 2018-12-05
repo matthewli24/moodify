@@ -12,21 +12,21 @@ class EnergyBar extends Component {
       value: 50
     }
   }
-  
+
   handleOnChange = (val) => {
     // console.log(val)
     this.setState({
       value: val
     })
   }
-  
+
   render() {
     return (
       <div className="energyAndBtnWrapper">
         <div className="energyBarWrapper">
           <div className="lowEnergy">Low Energy</div>
           <div className="slider">
-            <Slider 
+            <Slider
               value={this.state.value}
               onChange={this.handleOnChange}
               handleStyle={{
@@ -39,13 +39,14 @@ class EnergyBar extends Component {
               }}
               trackStyle={{ backgroundColor: 'red', height: 25 }}
               railStyle={{ backgroundColor: 'black', height: 25 }}
-              />
+            />
           </div>
           <div className="highEnergy">High Energy</div>
         </div>
         <SubmitBtn
           mood={this.props.mood}
           energy={this.state.value}
+          onMoodSelect={this.props.onMoodSelect}
         />
       </div>
     );

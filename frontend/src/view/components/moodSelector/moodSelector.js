@@ -22,23 +22,24 @@ class MoodSelector extends Component {
   }
 
   render() {
-    let angryClass= this.state.selected[0] ? "angrySelected" : "angry"
-    let sadClass= this.state.selected[1] ? "sadSelected" : "sad"
-    let neutralClass= this.state.selected[2] ? "neutralSelected" : "neutral"
-    let happyClass= this.state.selected[3] ? "happySelected" : "happy"
-    let beautifulClass= this.state.selected[4] ? "beautifulSelected" : "beautiful"
+    let angryClass = this.state.selected[0] ? "angrySelected" : "angry"
+    let sadClass = this.state.selected[1] ? "sadSelected" : "sad"
+    let neutralClass = this.state.selected[2] ? "neutralSelected" : "neutral"
+    let happyClass = this.state.selected[3] ? "happySelected" : "happy"
+    let beautifulClass = this.state.selected[4] ? "beautifulSelected" : "beautiful"
     return (
       <div className="moodAndEnergyWrapper">
         <div className="selectorWrapper">
-            <div className={angryClass} onClick={() => this.handleOnClick(0)}></div>
-            <div className={sadClass} onClick={() => this.handleOnClick(1)}></div>
-            <div className={neutralClass} onClick={() => this.handleOnClick(2)}></div>
-            <div className={happyClass} onClick={() => this.handleOnClick(3)}></div>
-            <div className={beautifulClass} onClick={() => this.handleOnClick(4)}></div>
+          <div className={angryClass} onClick={() => this.handleOnClick(0)}></div>
+          <div className={sadClass} onClick={() => this.handleOnClick(1)}></div>
+          <div className={neutralClass} onClick={() => this.handleOnClick(2)}></div>
+          <div className={happyClass} onClick={() => this.handleOnClick(3)}></div>
+          <div className={beautifulClass} onClick={() => this.handleOnClick(4)}></div>
         </div>
-        <EnergyBar mood={this.state.mood}/>
+        <EnergyBar mood={this.state.mood}
+          onMoodSelect={this.props.onMoodSelect} />
       </div>
-      
+
     );
   }
 }
