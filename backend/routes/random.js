@@ -29,7 +29,7 @@ function getToken(callback) {
     });
 }
 
-function getTracks(playlistId, access_token, callback, retry=3) {
+function getTracks(playlistId, access_token, callback, retry = 3) {
     let options = {
         url: `https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
         headers: { 'Authorization': 'Bearer ' + access_token },
@@ -46,12 +46,12 @@ function getTracks(playlistId, access_token, callback, retry=3) {
             callback(Array.from(trackIds));
         }
         else if (error && retry > 0) {
-            getTracks(playlistId, access_token, callback, retry-1);
+            getTracks(playlistId, access_token, callback, retry - 1);
         }
     });
 }
 
-function getAudioFeatures(trackIds, access_token, callback, retry=3) {
+function getAudioFeatures(trackIds, access_token, callback, retry = 3) {
     const query = trackIds.join();
     let options = {
         url: `https://api.spotify.com/v1/audio-features/?ids=${query}`,
@@ -91,11 +91,13 @@ function getAudioFeatures(trackIds, access_token, callback, retry=3) {
         }
     });
 }
-var tracks = ['2VjtYe7gpfUi2OkGxR2O2z','4yweVeiVhklj00DRKcQi9z']
+
+//*******************testing stuff ********************************
+var tracks = ['2VjtYe7gpfUi2OkGxR2O2z', '4yweVeiVhklj00DRKcQi9z']
 
 //filterBy should be object { property: conditionFunc }
 function filterFeatures(audioFeatures, filterBy) {
-    const filtered = audioFeatures.filter( track => {
+    const filtered = audioFeatures.filter(track => {
         const features = Objects.keys(track);
         const conditionFunc = filterBy[feature];
         return conditionFunc(featureVal);
@@ -104,7 +106,7 @@ function filterFeatures(audioFeatures, filterBy) {
 }
 
 var filter = {
-    energy: (val) => {val > 0.7 && val < 0.9}
+    energy: (val) => { val > 0.7 && val < 0.9 }
 }
 
 function filterByEnergy(playlistId, energy, access_token) {
@@ -122,7 +124,7 @@ getToken(access_token => {
         // });
     });
 })
-
+//************************* refresh function ****************************
 function refresh(refresh_token, callback) {
     //use the token received in the `callback` function
     const client_id = keys.spotify.clientID;
@@ -146,5 +148,42 @@ function refresh(refresh_token, callback) {
         }
     });
 }
+
+//**************************************************************** 
+
+function createPlaylist(user, access_token, callback, retry = 3) {
+    const playlistDetails = {
+        name: 'Moodify',
+        description: 'Created playlist based on mood!',
+        public: false
+    }
+    let options = {
+        url: `https://api.spotify.com/v1/users/${user}/playlists`,
+        headers: { 'Authorization': 'Bearer ' + access_token },
+        json: playlistDetails
+    };
+
+    request.post(options, (error, response, body) => {
+        const status = response.statusCode;
+        if (!error && (status === 200 || status === 201)) {
+            callback(body.id)
+        }
+        else if (error && retry > 0) {
+            createPlaylist(user, access_token, callback, retry - 1);
+        }
+        else {
+            res.json(error);
+        }
+    });
+};
+
+//******** testing createPlaylist *********/
+const username = req.user.spotifyId;
+getToken(access_token => {
+    createPlaylist(username, access_token, playlistId => {
+        let token = access_token;
+        console.log(token)
+    });
+})
 
 module.exports = router;
