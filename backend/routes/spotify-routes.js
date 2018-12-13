@@ -1,8 +1,11 @@
 const express = require('express');
 const request = require('request');
+const _ = require('underscore');
+const axios = require('axios');
 const router = express.Router();
 const keys = require('../config/keys');
 const bodyParser = require('body-parser');
+const utils = require('./utils');
 var createdPlaylistId;
 var playlistId;
 var songEnergy;
@@ -48,6 +51,49 @@ router.get('/me', (req, res) => {
         }
     });
 })
+
+router.get('/playlist', (req, res) => {
+    //ex. http://localhost:8000/playlist?mood=0&energy=0.6
+    const mood = req.query.mood;
+    const energy = parseFloat(req.query.energy);
+    const access_token = req.session.access_token;
+    const user = req.user.spotifyId;
+
+    utils.createPlaylist(user, access_token, (playlistId) => {
+        utils.filteredTracks(mood, access_token, 'energy', val => {
+            return val => energy-0.2 && val <= energy+0.2;
+        })
+        .then(tracks => {
+            //add tracks
+            const trackIds = (_.sample(tracks, 15)).join();
+            let options = {
+                url: `https://api.spotify.com/v1/playlists/${playlistId}/tracks?uris=${trackIds}`,
+                headers: { 'Authorization': 'Bearer ' + access_token },
+                json: true
+            };
+
+            request.post(options, trackIds, (error, response, body) => {
+                const status = response.statusCode;
+                if (!error && (status === 200 || status === 201)) {
+                    const url = `https://api.spotify.com/v1/playlists/${playlistId}?fields=uri`;
+
+                    const config = {
+                        url: url,
+                        headers: { 'Authorization': 'Bearer ' + access_token }
+                    };
+
+                    axios(config)
+                        .then(response => {
+                            res.json(response.data.uri);
+                        })
+                        .catch(err => {
+                            res.json(err);
+                        })
+                }
+            });
+        })
+    })
+});
 
 //create playlist
 router.get('/createplaylist', (req, res) => {
