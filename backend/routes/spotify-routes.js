@@ -75,7 +75,7 @@ router.get('/playlist', (req, res) => {
             request.post(options, trackIds, (error, response, body) => {
                 const status = response.statusCode;
                 if (!error && (status === 200 || status === 201)) {
-                    const url = `https://api.spotify.com/v1/playlists/${playlistId}?fields=uri`;
+                    const url = `https://api.spotify.com/v1/playlists/${playlistId}?fields=external_urls`;
 
                     const config = {
                         url: url,
@@ -84,7 +84,9 @@ router.get('/playlist', (req, res) => {
 
                     axios(config)
                         .then(response => {
-                            res.json(response.data.uri);
+                            let link = response.data.external_urls.spotify;
+                            link = link.replace('/playlist/','/embed/user/playlist/');
+                            res.json(link);
                         })
                         .catch(err => {
                             res.json(err);
