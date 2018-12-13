@@ -85,7 +85,7 @@ router.get('/playlist', (req, res) => {
                     axios(config)
                         .then(response => {
                             let link = response.data.external_urls.spotify;
-                            link = link.replace('/playlist/','/embed/user/playlist/');
+                            link = link.replace('/playlist/',`/embed/user/${user}/playlist/`);
                             res.json(link);
                         })
                         .catch(err => {
