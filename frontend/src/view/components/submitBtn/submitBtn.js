@@ -19,7 +19,6 @@ class SubmitBtn extends Component {
       fetch(`/spotify/playlist?mood=${mood}&energy=${energy}`)
         .then(res => res.json())
         .then(res => {
-          // console.log(res);
           this.setState({
             playlistURL: res
           })
