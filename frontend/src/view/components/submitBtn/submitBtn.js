@@ -16,11 +16,11 @@ class SubmitBtn extends Component {
 
     console.log(mood, energy)
     if (mood != null) {
-      fetch(`/playlist?mood=${mood}&energy=${energy}`)
+      fetch(`/spotify/playlist?mood=${mood}&energy=${energy}`)
         .then(res => res.json())
         .then(res => {
           this.setState({
-            playlistURL: res.playlistURL
+            playlistURL: res
           })
         })
         .then(() => { console.log(this.state.playlistURL) })
