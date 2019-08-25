@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="420px" height="420px" viewBox="0 0 420 420" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>beautiful</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="1.33287584%" x2="50%" y2="98.7005148%" id="linearGradient-1">
+            <stop stop-color="#99FF00" offset="0%"></stop>
+            <stop stop-color="#00FF01" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="200" cy="200" r="200"></circle>
+        <filter x="-3.6%" y="-3.1%" width="108.8%" height="108.8%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="3" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Moodify" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="emojis" transform="translate(-289.000000, -2676.000000)">
+            <g id="beautiful" transform="translate(296.000000, 2681.000000)">
+                <g id="Oval-Copy-3">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
+                <ellipse id="Oval-Copy-4" fill="#A46507" cx="124" cy="162.5" rx="24" ry="37.5"></ellipse>
+                <ellipse id="Oval-Copy-5" fill="#A46507" cx="276" cy="162.5" rx="24" ry="37.5"></ellipse>
+                <path d="M200.5,247 C241.207548,247 275.399336,278.036311 285,319.99972 L116,319.99972 C125.600664,278.036311 159.792452,247 200.5,247 Z" id="Path-Copy" fill="#A46507" transform="translate(200.500000, 283.499860) rotate(-180.000000) translate(-200.500000, -283.499860) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

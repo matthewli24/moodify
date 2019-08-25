@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="420px" height="420px" viewBox="0 0 420 420" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>angry</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="3.82179054%" x2="50%" y2="98.484523%" id="linearGradient-1">
+            <stop stop-color="#FFA500" offset="0%"></stop>
+            <stop stop-color="#BE5000" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="200" cy="200" r="200"></circle>
+        <filter x="-3.6%" y="-3.1%" width="108.8%" height="108.8%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="3" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Moodify" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="emojis" transform="translate(-289.000000, -1198.000000)">
+            <g id="angry" transform="translate(296.000000, 1203.000000)">
+                <g>
+                    <g id="Oval-Copy-3">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                    </g>
+                    <ellipse id="Oval-Copy-4" fill="#A46507" cx="124" cy="162.5" rx="24" ry="37.5"></ellipse>
+                    <ellipse id="Oval-Copy-5" fill="#A46507" cx="276" cy="162.5" rx="24" ry="37.5"></ellipse>
+                </g>
+                <path d="M200.5,247 C241.207548,247 275.399336,278.036311 285,319.99972 L116,319.99972 C125.600664,278.036311 159.792452,247 200.5,247 Z" id="Path" fill="#A46507"></path>
+                <path d="M119.435278,87 C142.799762,87 162.671319,109.965697 169.999825,141.999237 C153.984801,116.027301 131.253502,99.8100816 106.040307,99.8100816 C99.8563282,99.8100816 93.8216505,100.785648 87.998747,102.641437 C96.8292252,92.8025783 107.690985,87 119.435278,87 Z" id="Path" fill="#A46507"></path>
+                <path d="M280.564722,87 C292.309015,87 303.170775,92.8025783 312.001253,102.641437 C306.178349,100.785648 300.143672,99.8100816 293.959693,99.8100816 C268.746498,99.8100816 246.015199,116.027301 230.000175,141.999237 C237.328681,109.965697 257.200238,87 280.564722,87 Z" id="Path" fill="#A46507"></path>
+            </g>
+        </g>
+    </g>
+</svg>

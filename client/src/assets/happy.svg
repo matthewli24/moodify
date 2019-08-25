@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="420px" height="420px" viewBox="0 0 420 420" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>happy</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#F2FF00" offset="0%"></stop>
+            <stop stop-color="#AEC400" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="200" cy="200" r="200"></circle>
+        <filter x="-3.6%" y="-3.1%" width="108.8%" height="108.8%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="3" dy="5" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Moodify" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="emojis" transform="translate(-289.000000, -1878.000000)">
+            <g id="happy" transform="translate(296.000000, 1883.000000)">
+                <g id="Oval-Copy-3">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+                </g>
+                <ellipse id="Oval-Copy-4" fill="#A46507" cx="124" cy="162.5" rx="24" ry="37.5"></ellipse>
+                <ellipse id="Oval-Copy-5" fill="#A46507" cx="276" cy="162.5" rx="24" ry="37.5"></ellipse>
+                <path d="M200,246 C249.705627,246 290,280.026359 290,322 C290,325.390072 289.737149,328.728302 289.227719,332.00095 C283.430398,294.752444 245.691478,266 200,266 C154.308522,266 116.569602,294.752444 110.772125,332.000052 C110.262851,328.728302 110,325.390072 110,322 C110,280.026359 150.294373,246 200,246 Z" id="Path" fill="#A46507" transform="translate(200.000000, 289.000475) rotate(-180.000000) translate(-200.000000, -289.000475) "></path>
+            </g>
+        </g>
+    </g>
+</svg>
