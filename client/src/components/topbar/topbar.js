@@ -2,19 +2,14 @@ import React, { Component } from 'react';
 import './topbar.css';
 
 class Topbar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    }
-  }
 
-  handleSignIn = () => {
-    window.location = 'http://localhost:8000/auth/spotify';
-  }
+  // handleSignIn = () => {
+  //   window.location = 'http://localhost:8000/auth/spotify';
+  // }
 
-  handleSigOut = () => {
-    window.location = 'http://localhost:8000/auth/logout';
-  }
+  // handleSigOut = () => {
+  //   window.location = 'http://localhost:8000/auth/logout';
+  // }
 
   render() {
     let username = this.props.username;
@@ -23,12 +18,13 @@ class Topbar extends Component {
     if(username) {
       button = 
         <div className="signedIn">
-          {/* <div className="username">{username}</div> */}
+          <div className="username">{username}</div>
           <button className="signOutBtn" onClick={this.handleSigOut}>Sign Out</button>
         </div>
     } else {
       button = <button className="signInBtn" onClick={this.handleSignIn}>Sign In/Sign Up</button>
     }
+
     return (
       <div className="topbarWrapper">
         <div className="topbarLogo">
@@ -36,12 +32,13 @@ class Topbar extends Component {
         </div>
 
         <div className="topbarMessage">
-          <div onClick={this.test101}>How Are You Feeling?</div>
+          How Are You Feeling?
         </div>
 
-        <div className="topbarUserLog">
+        <div className="topbarUserLoggedIn">
           {button}
         </div>
+
       </div>
     );
   }

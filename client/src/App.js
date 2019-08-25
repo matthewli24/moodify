@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import Topbar from './components/topbar/topbar';
-import MoodSelector from './components/moodSelector/moodSelector';
-import PlayButton from './components/playButton/playButton';
-import ChangeMoodSelector from './components/changeMoodSelector/changeMoodSelector';
 import './App.css';
 
 class App extends Component {
@@ -18,46 +15,18 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('/users')
-      .then(res => res.json())
-      .then(res => {
-        this.setState({
-          username: res.id,
-          email: res.email
-        })
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }
-
-  onMoodSelect = (selected, currentMood, url) => {
-    this.setState({
-      moodSelected: selected,
-      playlistURL: url,
-      mood: currentMood
-    })
-  }
-
-  onMoodChange = (selected) => {
-    this.setState({
-      moodSelected: selected
-    })
   }
 
   render() {
-    let moodSelection = this.state.moodSelected ? 
-      <ChangeMoodSelector mood={this.state.mood} onMoodChange={this.onMoodChange} /> :
-      <MoodSelector onMoodSelect={this.onMoodSelect} />
-      
     return (
-      <div className='container'>
+      <div className='appContainer'>
         <Topbar
           username={this.state.username}
           email={this.state.email}
         />
-        {moodSelection}
-        <PlayButton playlistURL={this.state.playlistURL} />
+
+      
+
       </div>
     );
   }

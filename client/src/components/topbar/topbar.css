@@ -4,8 +4,8 @@
     height: 90px;
     width: 100%;
     align-items: center;
-    background: #027bf3;
-    color: white;
+    background: #000000;
+    color: #FFF;
     font-size: 40px;
     font-family: 'Berkshire Swash', cursive;
     display: flex;
@@ -16,15 +16,11 @@
 }
 
 .topbarLogo {
-    padding: 20px;
-    font-size: 110%;
+    padding: 40px;
+    font-size: 100%;
 }
 
-.topbarMessage {
-
-}
-
-.topbarUserLog {
+.topbarUserLoggedIn {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -33,22 +29,23 @@
 
 .signInBtn,
 .signOutBtn {
-    font-family: 'Berkshire Swash', cursive;
-    padding: 15px 25px;
-    font-size: 70%;
+    color: white;
     cursor: pointer;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 16px;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 60%;
+    margin: 4px 2px;
+    outline: none;
+    padding: 15px 25px;
     text-align: center;
     text-decoration: none;
-    outline: none;
-    color: white;
-    background-color: #027bf3;
-    border: 5px solid red;
-    border-radius: 100%;
 }
   
 .signInBtn:hover, 
 .signOutBtn:hover {
-    background-color: #000000
+    border: 2px solid red;
 }
 
 .signInBtn:active,
@@ -67,4 +64,26 @@ transform: translateY(4px);
 
 .username {
     padding: 15px 20px;
+}
+
+
+
+@media only screen and (max-width: 918px) {
+    .topbarMessage {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 505px) {
+    .signInBtn,
+    .signOutBtn {
+        font-size: 50%;
+    }
+}
+
+@media only screen and (max-width: 475px) {
+    .signInBtn,
+    .signOutBtn {
+        font-size: 30%;
+    }
 }
