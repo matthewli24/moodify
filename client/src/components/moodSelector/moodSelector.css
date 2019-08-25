@@ -14,8 +14,8 @@
 }
 
 .emoji {
-  height: 220px;
-  width: 220px;
+  height: 15%;
+  width: 15%;
 }
 
 .emoji:hover {
@@ -26,8 +26,8 @@
 }
 
 .selected {
-  height: 220px;
-  width: 220px;
+  height: 15%;
+  width: 15%;
   box-shadow: 0px 15px 30px rgb(255, 255, 255);
   border-radius: 100%;
   -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -36,4 +36,20 @@
   transform: scale(1.25, 1.25);
 }
 
+@media only screen and (min-width: 531px) {
+  .emojiCarousel {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .moodAndEnergyWrapper {
+    height: 100%;
+    width: 100%;
+    margin-top: 170px;
+  }
+  .selectorWrapper {
+      display: none;
+  }
+}
 

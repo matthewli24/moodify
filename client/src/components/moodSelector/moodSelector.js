@@ -7,6 +7,7 @@ import sadEmoji from '../../assets/sad.svg';
 import neutralEmoji from '../../assets/neutral.svg';
 import happyEmoji from '../../assets/happy.svg';
 import beautifulEmoji from '../../assets/beautiful.svg';
+import {Carousel} from 'react-materialize';
 
 class MoodSelector extends Component {
   constructor(props) {
@@ -46,29 +47,32 @@ class MoodSelector extends Component {
       <div className="moodAndEnergyWrapper">
 
         <div className="selectorWrapper">
-          <div onClick={() => this.handleOnClick(0)}>
-            <img className={angryClass} src={angryEmoji} alt="angryEmoji"/>
-          </div>
-          <div onClick={() => this.handleOnClick(1)}>
-            <img className={sadClass} src={sadEmoji} alt="sadEmoji"/>
-          </div>
-          <div onClick={() => this.handleOnClick(2)}>
-            <img className={neutralClass} src={neutralEmoji} alt="neutralEmoji"/>
-          </div>
-          <div onClick={() => this.handleOnClick(3)}>
-            <img className={happyClass} src={happyEmoji} alt="happyEmoji"/>
-          </div>
-          <div onClick={() => this.handleOnClick(4)}>
-            <img className={beautifulClass} src={beautifulEmoji} alt="beautifulEmoji"/>
-          </div>
-
+         
+          <img className={angryClass} src={angryEmoji} alt="angryEmoji" onClick={() => this.handleOnClick(0)}/>
+          <img className={sadClass} src={sadEmoji} alt="sadEmoji" onClick={() => this.handleOnClick(1)}/>
+          <img className={neutralClass} src={neutralEmoji} alt="neutralEmoji" onClick={() => this.handleOnClick(2)}/>
+          <img className={happyClass} src={happyEmoji} alt="happyEmoji" onClick={() => this.handleOnClick(3)}/>
+          <img className={beautifulClass} src={beautifulEmoji} alt="beautifulEmoji" onClick={() => this.handleOnClick(4)}/>
+  
         </div>
 
+
+        <Carousel className="emojiCarousel" images={[
+          neutralEmoji,
+          happyEmoji,
+          beautifulEmoji,
+          angryEmoji,
+          sadEmoji
+        ]} />
+
+
+      
         {/* <EnergyBar mood={this.state.mood}
           onMoodSelect={this.props.onMoodSelect} /> */}
+          
+
 
       </div>
-
     );
   }
 }
