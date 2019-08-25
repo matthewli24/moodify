@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Topbar from './components/topbar/topbar';
 import MoodSelector from './components/moodSelector/moodSelector'
+import EnergyBar from './components/energyBar/energyBar';
 import './App.css';
 
 class App extends Component {
@@ -26,7 +27,9 @@ class App extends Component {
           email={this.state.email}
         />
 
-        <MoodSelector/>
+        <MoodSelector />
+
+        <EnergyBar />
 
       </div>
     );

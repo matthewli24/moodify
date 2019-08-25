@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './moodSelector.css';
-import EnergyBar from '../energyBar/energyBar';
 
 import angryEmoji from '../../assets/angry.svg';
 import sadEmoji from '../../assets/sad.svg';
@@ -31,7 +30,7 @@ class MoodSelector extends Component {
       this.setState({
         mood: val,
         selected: newSelectedState
-      }, ()=>console.log(this.state.mood))
+      })
     }
   }
 
@@ -46,7 +45,7 @@ class MoodSelector extends Component {
       let current = (this.state.mood + 1) % 5;
       this.setState({
         mood: current
-      }, ()=>console.log(this.state.mood))
+      })
     } 
   }
 
@@ -87,13 +86,6 @@ class MoodSelector extends Component {
           sadEmoji
           ]} 
         />
-
-
-      
-        {/* <EnergyBar mood={this.state.mood}
-          onMoodSelect={this.props.onMoodSelect} /> */}
-          
-
 
       </div>
     );

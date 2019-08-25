@@ -17,7 +17,7 @@ class EnergyBar extends Component {
     // console.log(val)
     this.setState({
       value: val
-    })
+    }, ()=> {console.log(this.state.value)})
   }
 
   render() {
@@ -43,11 +43,7 @@ class EnergyBar extends Component {
           </div>
           <div className="highEnergy">High Energy</div>
         </div>
-        <SubmitBtn
-          mood={this.props.mood}
-          energy={this.state.value}
-          onMoodSelect={this.props.onMoodSelect}
-        />
+
       </div>
     );
   }

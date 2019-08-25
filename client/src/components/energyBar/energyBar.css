@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
 
 .energyAndBtnWrapper {
-    /* height: 100%; */
     width: 100%;
-    background: #002e6b;
     font-family: 'Berkshire Swash', cursive;
+    padding-top: 100px;
 }
 .energyBarWrapper {
-    /* height: 100%; */
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -21,8 +19,21 @@
 
 .lowEnergy,
 .highEnergy {
-    height: 100%;
     font-size: 25px;
     color: white;
     padding: 0px 25px
+}
+
+@media only screen and (max-width: 815px) {
+    .lowEnergy,
+    .highEnergy {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .lowEnergy,
+    .highEnergy {
+        font-size: 12px;
+    }
 }
