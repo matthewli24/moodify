@@ -5,7 +5,7 @@ class ChangeMoodSelector extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      toggle: false
+      toggled: false
     }
   }
 
@@ -13,13 +13,13 @@ class ChangeMoodSelector extends Component {
     if (this.state.toggle) {
       this.props.onMoodChange(true);
       this.setState({
-        toggle: false
+        toggled: false
       })
     }
     else {
       this.props.onMoodChange(false);
       this.setState({
-        toggle: true
+        toggled: true
       })
     }
   }
@@ -27,6 +27,7 @@ class ChangeMoodSelector extends Component {
   render() {
     let mood = this.props.mood
     let currentMood = "";
+    
     if (mood === 0) {
       currentMood = "angry"
     }

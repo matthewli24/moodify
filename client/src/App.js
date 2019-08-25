@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Topbar from './components/topbar/topbar';
+import MoodSelector from './components/moodSelector/moodSelector'
 import './App.css';
 
 class App extends Component {
@@ -25,7 +26,7 @@ class App extends Component {
           email={this.state.email}
         />
 
-      
+        <MoodSelector/>
 
       </div>
     );
