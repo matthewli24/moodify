@@ -31,8 +31,23 @@ class MoodSelector extends Component {
       this.setState({
         mood: val,
         selected: newSelectedState
-      })
+      }, ()=>console.log(this.state.mood))
     }
+  }
+
+  rotateMood = () => {
+    //not accurate 
+    //don't know how to get the correct index
+    if(this.state.mood === null){
+      this.setState({
+        mood: 2
+      })
+    } else {
+      let current = (this.state.mood + 1) % 5;
+      this.setState({
+        mood: current
+      }, ()=>console.log(this.state.mood))
+    } 
   }
 
   render() {
@@ -57,13 +72,21 @@ class MoodSelector extends Component {
         </div>
 
 
-        <Carousel className="emojiCarousel" images={[
+        <Carousel className="emojiCarousel" 
+          options={{
+            numVisible: 3,
+            indicators: true,
+            onCycleTo: () => this.rotateMood()
+          }}
+          
+          images={[
           neutralEmoji,
           happyEmoji,
           beautifulEmoji,
           angryEmoji,
           sadEmoji
-        ]} />
+          ]} 
+        />
 
 
       
