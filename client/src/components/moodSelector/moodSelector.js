@@ -18,42 +18,50 @@ class MoodSelector extends Component {
   }
 
   handleOnClick = (val) => {
-    let newSelected = [0, 0, 0, 0, 0];
-    newSelected[val] = 1;
+    let newSelectedState = [0, 0, 0, 0, 0];
 
-    this.setState({
-      mood: val,
-      selected: newSelected
-    })
+    if(val === this.state.mood) {
+      this.setState({
+        mood: null,
+        selected: newSelectedState
+      })
+    } else {
+      newSelectedState[val] = 1;
+      this.setState({
+        mood: val,
+        selected: newSelectedState
+      })
+    }
   }
 
   render() {
 
-    let angryClass = this.state.selected[0] ? "angrySelected" : "angry"
-    let sadClass = this.state.selected[1] ? "sadSelected" : "sad"
-    let neutralClass = this.state.selected[2] ? "neutralSelected" : "neutral"
-    let happyClass = this.state.selected[3] ? "happySelected" : "happy"
-    let beautifulClass = this.state.selected[4] ? "beautifulSelected" : "beautiful"
+    let angryClass = this.state.selected[0] ? "selected" : "emoji"
+    let sadClass = this.state.selected[1] ? "selected" : "emoji"
+    let neutralClass = this.state.selected[2] ? "selected" : "emoji"
+    let happyClass = this.state.selected[3] ? "selected" : "emoji"
+    let beautifulClass = this.state.selected[4] ? "selected" : "emoji"
 
     return (
       <div className="moodAndEnergyWrapper">
 
         <div className="selectorWrapper">
-          <div className={angryClass} onClick={() => this.handleOnClick(0)}>
-            <img className="emoji" src={angryEmoji} alt="angryEmoji"/>
+          <div onClick={() => this.handleOnClick(0)}>
+            <img className={angryClass} src={angryEmoji} alt="angryEmoji"/>
           </div>
-          <div className={sadClass} onClick={() => this.handleOnClick(1)}>
-            <img className="emoji" src={sadEmoji} alt="sadEmoji"/>
+          <div onClick={() => this.handleOnClick(1)}>
+            <img className={sadClass} src={sadEmoji} alt="sadEmoji"/>
           </div>
-          <div className={neutralClass} onClick={() => this.handleOnClick(2)}>
-            <img className="emoji" src={neutralEmoji} alt="neutralEmoji"/>
+          <div onClick={() => this.handleOnClick(2)}>
+            <img className={neutralClass} src={neutralEmoji} alt="neutralEmoji"/>
           </div>
-          <div className={happyClass} onClick={() => this.handleOnClick(3)}>
-            <img className="emoji" src={happyEmoji} alt="happyEmoji"/>
+          <div onClick={() => this.handleOnClick(3)}>
+            <img className={happyClass} src={happyEmoji} alt="happyEmoji"/>
           </div>
-          <div className={beautifulClass} onClick={() => this.handleOnClick(4)}>
-            <img className="emoji" src={beautifulEmoji} alt="beautifulEmoji"/>
+          <div onClick={() => this.handleOnClick(4)}>
+            <img className={beautifulClass} src={beautifulEmoji} alt="beautifulEmoji"/>
           </div>
+
         </div>
 
         {/* <EnergyBar mood={this.state.mood}
