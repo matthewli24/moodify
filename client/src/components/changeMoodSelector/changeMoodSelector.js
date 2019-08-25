@@ -27,19 +27,19 @@ class ChangeMoodSelector extends Component {
   render() {
     let mood = this.props.mood
     let currentMood = "";
-    if (mood == 0) {
+    if (mood === 0) {
       currentMood = "angry"
     }
-    else if (mood == 1) {
+    else if (mood === 1) {
       currentMood = "sad"
     }
-    else if (mood == 2) {
+    else if (mood === 2) {
       currentMood = "neutral"
     }
-    else if (mood == 3) {
+    else if (mood === 3) {
       currentMood = "happy"
     }
-    else if (mood == 4) {
+    else if (mood === 4) {
       currentMood = "beautiful"
     }
 

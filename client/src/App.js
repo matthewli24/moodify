@@ -46,8 +46,10 @@ class App extends Component {
   }
 
   render() {
-    let moodSelection = this.state.moodSelected ? <ChangeMoodSelector mood={this.state.mood} onMoodChange={this.onMoodChange}/> :
-                                                  <MoodSelector onMoodSelect={this.onMoodSelect} />
+    let moodSelection = this.state.moodSelected ? 
+      <ChangeMoodSelector mood={this.state.mood} onMoodChange={this.onMoodChange} /> :
+      <MoodSelector onMoodSelect={this.onMoodSelect} />
+      
     return (
       <div className='container'>
         <Topbar
