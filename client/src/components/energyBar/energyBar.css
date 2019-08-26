@@ -1,27 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
 
-.energyAndBtnWrapper {
-    width: 100%;
-    font-family: 'Berkshire Swash', cursive;
-    padding-top: 100px;
-}
 .energyBarWrapper {
     width: 100%;
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 30px 0px; 
-}
-
-.slider {
-    width: 55%;
+    padding-top: 120px;
+    padding-bottom: 30px;
 }
 
 .lowEnergy,
 .highEnergy {
-    font-size: 25px;
+    background-color: black;
+    border-radius: 100px;
     color: white;
-    padding: 0px 25px
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+}
+
+.slider {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 @media only screen and (max-width: 815px) {

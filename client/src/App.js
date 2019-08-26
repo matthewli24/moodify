@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Topbar from './components/topbar/topbar';
 import MoodSelector from './components/moodSelector/moodSelector'
 import EnergyBar from './components/energyBar/energyBar';
+import SubmitBtn from './components/submitBtn/submitBtn'
 import './App.css';
 
 class App extends Component {
@@ -30,6 +31,8 @@ class App extends Component {
         <MoodSelector />
 
         <EnergyBar />
+
+        <SubmitBtn />
 
       </div>
     );

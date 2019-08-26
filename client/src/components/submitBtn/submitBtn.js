@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './submitBtn.css'
-import PlayButton from '../playButton/playButton';
 
 class SubmitBtn extends Component {
   constructor(props) {
@@ -15,19 +14,19 @@ class SubmitBtn extends Component {
     let energy = this.props.energy / 100;
 
     console.log(mood, energy)
-    if (mood != null) {
-      fetch(`/spotify/playlist?mood=${mood}&energy=${energy}`)
-        .then(res => res.json())
-        .then(res => {
-          this.setState({
-            playlistURL: res
-          })
-        })
-        .then(() => { console.log(this.state.playlistURL) })
-        .then(() => { this.props.onMoodSelect(true, mood, this.state.playlistURL) })
-        .catch((err) => {
-          console.log("error fetching playlist: ", err)
-        })
+    if (mood !== null) {
+      // fetch(`/spotify/playlist?mood=${mood}&energy=${energy}`)
+      //   .then(res => res.json())
+      //   .then(res => {
+      //     this.setState({
+      //       playlistURL: res
+      //     })
+      //   })
+      //   .then(() => { console.log(this.state.playlistURL) })
+      //   .then(() => { this.props.onMoodSelect(true, mood, this.state.playlistURL) })
+      //   .catch((err) => {
+      //     console.log("error fetching playlist: ", err)
+      //   })
     } else {
       alert('PLEASE SELECT A MOOD!');
     }
