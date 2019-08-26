@@ -17,6 +17,8 @@
     color: white;
     font-family: 'Berkshire Swash', cursive;
     font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
     text-align: center;
     padding: 10px;
 }
