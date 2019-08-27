@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SpotifyIcon from '../../assets/spotifyIcon.svg'
 import './topbar.css';
 
 class Topbar extends Component {
@@ -35,7 +36,10 @@ class Topbar extends Component {
           How Are You Feeling?
         </div>
 
+        
+
         <div className="topbarUserLoggedIn">
+          <img className="spotifyIcon" src={SpotifyIcon} alt="spotifyIcon"/>
           {button}
         </div>
 
