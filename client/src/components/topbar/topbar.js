@@ -4,9 +4,9 @@ import './topbar.css';
 
 class Topbar extends Component {
 
-  // handleSignIn = () => {
-  //   window.location = 'http://localhost:8000/auth/spotify';
-  // }
+  handleSignIn = () => {
+    window.location = 'https://moodifysongs.firebaseapp.com/api/v1/auth/spotify';
+  }
 
   // handleSigOut = () => {
   //   window.location = 'http://localhost:8000/auth/logout';
